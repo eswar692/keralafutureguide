@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ChevronRight, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
 import useInViewOnce from "./InView";
 import {
   company_name,
@@ -108,17 +107,17 @@ export default function Footer() {
           <h2 className="text-2xl font-bold mb-3">Legal</h2>
           <ul className="space-y-3 text-sm">
             <li>
-              <Link
-                to="/privacy-policy"
+              <a
+                href="/privacy-policy"
                 className="hover:text-yellow-300 transition"
               >
                 Privacy Policy
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/terms" className="hover:text-yellow-300 transition">
+              <a href="/terms" className="hover:text-yellow-300 transition">
                 Terms & Conditions
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -148,15 +147,15 @@ const CopyRightAndContact = () => {
 
         {/* Inline Legal Links */}
         <div className="flex gap-6 text-lg">
-          <Link
-            to="/privacy-policy"
+          <a
+            href="/privacy-policy"
             className="hover:text-yellow-300 transition"
           >
             Privacy Policy
-          </Link>
-          <Link to="/terms" className="hover:text-yellow-300 transition">
+          </a>
+          <a href="/terms" className="hover:text-yellow-300 transition">
             Terms
-          </Link>
+          </a>
         </div>
       </div>
     </div>
