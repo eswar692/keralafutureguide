@@ -15,22 +15,10 @@ const Header = () => {
 
 export default Header;
 
-// const Title = () => (
-//   <div className="flex flex-row w-full md:flex-row items-center justify-between gap-4">
-//     <h5 className="montserrat font-semibold text-gray-200 text-center md:text-left text-sm md:text-base">
-//       ✨ Any Problem? Connect with us
-//     </h5>
-//     <a
-//       href={`tel://${phone_number}`}
-//       className="px-6 py-2 bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-white font-semibold rounded-full shadow-xl transition-transform duration-300 hover:scale-105 montserrat text-sm"
-//     >
-//       Call Now
-//     </a>
-//   </div>
-// );
+/* ================= LOGO SECTION ================= */
 
 const Logo = () => (
-  <header className="w-full px-4 py-4 md:px-10 md:py-6">
+  <div className="w-full px-4 py-4 md:px-10 md:py-6">
     <div className="flex items-center justify-between">
       {/* Logo + Info */}
       <div className="flex items-start gap-4 md:gap-6">
@@ -56,18 +44,18 @@ const Logo = () => (
           </h1>
 
           <p className="text-xs md:text-sm text-yellow-300 italic">
-            Since 1950
+            Trusted Guidance Services
           </p>
 
-          <p className="text-xs md:text-sm text-gray-200 mt-2 leading-relaxed max-w-[360px]">
-            <b>No. 34, 7th Cross, Vijay Nagar</b>, 98/3 DC Road,
+          <p className="text-xs md:text-sm text-gray-300 mt-2 leading-relaxed max-w-[360px]">
+            No. 34, 7th Cross, Vijay Nagar
             <br />
-            Kuttiyappa Garden, Bilekahalli,
+            Bilekahalli, Bengaluru – 560076
             <br />
-            Bengaluru – 560076, Karnataka
+            Karnataka, India
             <br />
             <span className="text-yellow-400 font-semibold">
-              📞 +91 91102 22675
+              📞 {phone_number}
             </span>
           </p>
         </div>
@@ -76,13 +64,17 @@ const Logo = () => (
       {/* Menu */}
       <Menu />
     </div>
-  </header>
+  </div>
 );
+
+/* ================= MENU ================= */
+
 const Menu = () => {
   const [open, setOpen] = useState(false);
+
   return (
     <div>
-      {/* Desktop menu */}
+      {/* Desktop Menu */}
       <ul className="hidden lg:flex gap-8 font-medium text-gray-100 montserrat text-lg">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
@@ -90,7 +82,7 @@ const Menu = () => {
         <NavLink to="/contact">Contact</NavLink>
       </ul>
 
-      {/* Mobile menu button */}
+      {/* Mobile Menu Button */}
       <button
         className="lg:hidden p-2 border rounded bg-orange-500 transition duration-300"
         onClick={() => setOpen(!open)}
@@ -102,6 +94,8 @@ const Menu = () => {
     </div>
   );
 };
+
+/* ================= NAV LINK ================= */
 
 const NavLink = ({
   to,
@@ -118,6 +112,8 @@ const NavLink = ({
   </Link>
 );
 
+/* ================= MOBILE MENU ================= */
+
 const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
   return (
     <div
@@ -130,6 +126,7 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
         <h1 className="text-2xl font-extrabold text-yellow-400 tracking-wide">
           {company_name}
         </h1>
+
         <button
           onClick={() => setOpen(false)}
           className="p-2 rounded-full bg-yellow-400 hover:bg-yellow-500 transition"
@@ -138,24 +135,28 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
         </button>
       </div>
 
-      {/* Nav Links */}
+      {/* Navigation Links */}
       <ul className="flex flex-col gap-5 mt-8 text-white text-lg font-semibold">
-        {["Home", "About", "Services", "Testimonials", "Contact"].map(
-          (item) => (
-            <Link
-              key={item}
-              to={`/${item.toLowerCase()}`}
-              onClick={() => setOpen(false)}
-              className="py-3 px-4 rounded-xl hover:bg-white/10 hover:text-yellow-400 transition"
-            >
-              {item}
-            </Link>
-          ),
-        )}
+        {[
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+          { name: "Services", path: "/services" },
+          { name: "Contact", path: "/contact" },
+        ].map((item) => (
+          <Link
+            key={item.name}
+            to={item.path}
+            onClick={() => setOpen(false)}
+            className="py-3 px-4 rounded-xl hover:bg-white/10 hover:text-yellow-400 transition"
+          >
+            {item.name}
+          </Link>
+        ))}
       </ul>
 
       {/* CTA Section */}
       <div className="mt-auto space-y-4 pt-8 border-t border-white/10">
+        {/* Call Button */}
         <a
           href={`tel:${phone_number}`}
           className="flex items-center justify-center gap-2 w-full
@@ -163,11 +164,14 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
           hover:bg-yellow-500 transition"
         >
           <Phone size={18} />
-          Call Now
+          Contact Us
         </a>
 
+        {/* WhatsApp Button (Safe Prefilled Message) */}
         <a
-          href={`https://wa.me/${whatsapp_number}`}
+          href={`https://wa.me/${whatsapp_number}?text=Hello,%20I%20would%20like%20to%20know%20more%20about%20your%20services.`}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 w-full
           bg-green-500 text-white py-3 rounded-full font-bold
           hover:bg-green-600 transition"
@@ -179,22 +183,3 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
     </div>
   );
 };
-
-// const TextMarquee = () => (
-//   <div
-//     className="overflow-hidden
-//  bg-gradient-to-l from-green-300 via-blue-300 to-orange-300
-
-// "
-//   >
-//     <Marquee
-//       speed={50}
-//       className="whitespace-nowrap text-black  py-2 open-sans text-md md:text-base tracking-wide"
-//     >
-//       🌙 Facing issues like Love Breakup, Marriage Disputes, Relationship
-//       Conflicts, or wanting to Get Your Love Back? 🔮 Consult for Vashikaran
-//       solutions to attract your desired partner or resolve personal issues.
-//       Contact a trusted Astrologer today.
-//     </Marquee>
-//   </div>
-// );

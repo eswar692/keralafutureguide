@@ -1,4 +1,4 @@
-import { person_name } from "../Genaral/secrete";
+import { person_name, company_name } from "../Genaral/secrete";
 
 export default function About() {
   return (
@@ -7,33 +7,32 @@ export default function About() {
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
           About Us
         </h2>
-        <p className="text-gray-800 text-lg md:text-xl leading-relaxed space-y-4">
-          Astrologer{" "}
+
+        <p className="text-gray-800 text-lg md:text-xl leading-relaxed">
           <span className="font-bold text-indigo-700">{person_name}</span> is a
-          renowned and respected spiritual leader in India. With his deep
-          knowledge of astrology and unwavering commitment to helping others, he
-          has established himself as a trusted advisor to people across the
-          country.
+          professional consultant associated with{" "}
+          <span className="font-semibold text-violet-700">{company_name}</span>
+          . With years of experience in advisory and discussion-based sessions,
+          he provides structured consultation focused on clarity, reflection,
+          and informed decision-making.
           <br />
           <br />
-          Through his extensive experience and intuitive abilities, Astrologer{" "}
-          <span className="font-semibold text-violet-700">
+          Services are designed to offer thoughtful perspectives on personal,
+          relationship, career, and family matters through confidential
+          discussions. Sessions may be conducted in person or through remote
+          consultation channels.
+          <br />
+          <br />
+          Known for a professional and client-focused approach,{" "}
+          <span className="font-semibold text-indigo-600">
             {person_name}
           </span>{" "}
-          offers a wide range of services including palm readings, face
-          readings, photo readings, and phone consultations. His expertise spans
-          astrology, spiritual guidance, and personal development, making him a
-          versatile and influential figure in the spiritual community.
+          emphasizes respectful communication and practical guidance tailored to
+          each individual’s circumstances.
           <br />
           <br />
-          Known for his{" "}
-          <span className="font-semibold text-indigo-600">accuracy</span> and
-          insightful interpretations, Astrologer Panikaran Guruji has built a
-          loyal following of clients who attest to the transformative power of
-          his readings.
-          <br />
-          <br />
-          If you’re in need of a trusted spiritual guide, look no further.
+          Our goal is to provide supportive consultation in a responsible and
+          professional environment.
         </p>
       </div>
     </section>

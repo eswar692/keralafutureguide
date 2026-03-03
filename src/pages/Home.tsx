@@ -25,9 +25,9 @@ const Home = () => {
       <ImageView />
       <CardCarousel />
       <Problems />
-      <AboutAstrologer />
-      <AstrologyServices />
-      <AstrologyServicesModern />
+      <AboutSection />
+      <ConsultationServices />
+      <ConsultationServicesModern />
       <AllServicesModern />
       <HomeLastDesign />
       <Testimonials />
@@ -37,29 +37,29 @@ const Home = () => {
 };
 
 export default Home;
-
+// Home Last Design
 const Problems = () => {
-  const problems = [
+  const services = [
     {
-      title: "Lost Love Back",
-      desc: "Guidance available through call and WhatsApp consultation.",
+      title: "Relationship Consultation",
+      desc: "Professional guidance sessions available via call and WhatsApp consultation.",
       img: "https://i.pinimg.com/736x/4a/c8/aa/4ac8aaa977a4eef9bb1eac0041929380.jpg",
     },
     {
-      title: "Marriage Problems",
-      desc: "Astrology solutions for disputes, delays and misunderstandings.",
+      title: "Marriage Consultation",
+      desc: "Confidential advisory sessions focused on communication and understanding.",
       img: "https://i.pinimg.com/1200x/c1/2b/fc/c12bfc17ac4630ade4f0e1e4a1f819e2.jpg",
     },
     {
-      title: "Education Remedies",
-      desc: "Astrological remedies to improve focus and academic growth.",
+      title: "Education Guidance",
+      desc: "Structured consultation to discuss focus, planning, and academic direction.",
       img: "https://i.pinimg.com/736x/73/49/66/73496669119b34a1dd1ab91ffd626f68.jpg",
     },
   ];
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
-      {problems.map((item, index) => (
+      {services.map((item, index) => (
         <div
           key={index}
           className="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden"
@@ -80,13 +80,13 @@ const Problems = () => {
             <p className="text-sm text-gray-300 mt-2">{item.desc}</p>
 
             <a
-              href={`https://wa.me/${whatsapp_number}`}
+              href={`https://wa.me/${whatsapp_number}?text=Hello,%20I%20would%20like%20to%20know%20more%20about%20your%20consultation%20services.`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-4"
             >
-              <button className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm font-semibold">
-                WhatsApp Now
+              <button className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition">
+                WhatsApp
               </button>
             </a>
           </div>
@@ -96,7 +96,7 @@ const Problems = () => {
   );
 };
 
-const AboutAstrologer = () => {
+const AboutSection = () => {
   return (
     <section className="relative py-20 px-6 bg-gradient-to-b from-purple-50 via-pink-50 to-orange-50 overflow-hidden">
       {/* Background Abstract Shapes */}
@@ -107,7 +107,7 @@ const AboutAstrologer = () => {
         {/* Left Side Content */}
         <div className="space-y-6 md:pr-6 text-center md:text-left">
           <button className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white px-6 py-3 rounded-full text-sm md:text-base font-semibold montserrat shadow-lg hover:scale-105 transition-transform duration-300">
-            ✨ Know the Astrologer
+            About Our Services
           </button>
 
           <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 montserrat drop-shadow-lg">
@@ -115,22 +115,17 @@ const AboutAstrologer = () => {
           </h2>
 
           <p className="text-gray-800 leading-relaxed text-lg md:text-xl open-sans">
-            Meet{" "}
-            <span className="font-bold text-purple-600">{company_name}</span>, a
-            globally renowned astrologer whose wisdom in astrology is inherited
-            through generations. His expertise has guided countless individuals
-            toward{" "}
-            <span className="font-semibold text-indigo-600">
-              peace, clarity, and success
-            </span>
-            .
+            <span className="font-bold text-purple-600">{company_name}</span>{" "}
+            offers professional consultation and advisory services designed to
+            support individuals in making informed life decisions with clarity
+            and confidence.
           </p>
 
           <p className="text-gray-700 leading-relaxed text-lg md:text-xl">
-            With personalized solutions, accurate predictions, and deep
-            understanding of life’s challenges, {company_name} continues to
-            attract a global clientele seeking both spiritual and practical
-            guidance.
+            Our approach focuses on structured discussion, thoughtful
+            perspective, and practical guidance tailored to each client’s
+            situation. Sessions are conducted with professionalism,
+            confidentiality, and respect.
           </p>
 
           {/* Call to Action */}
@@ -139,15 +134,16 @@ const AboutAstrologer = () => {
               href={`tel:${phone_number}`}
               className="flex items-center gap-2 bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
             >
-              Call Now
+              Contact Us
             </a>
+
             <a
-              href={`https://wa.me/${whatsapp_number}`}
+              href={`https://wa.me/${whatsapp_number}?text=Hello,%20I%20would%20like%20to%20know%20more%20about%20your%20consultation%20services.`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-gradient-to-r from-green-500 via-teal-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
             >
-              Chat Now
+              WhatsApp
             </a>
           </div>
         </div>
@@ -157,10 +153,9 @@ const AboutAstrologer = () => {
           <div className="relative w-full max-w-md">
             <img
               src="https://i.pinimg.com/1200x/2b/7e/f6/2b7ef69aef08f4f9ec85e1f37984332a.jpg"
-              alt="Astrologer Banner"
+              alt="Consultation Services Banner"
               className="w-full h-[420px] rounded-3xl object-cover shadow-2xl transform hover:scale-105 transition-transform duration-500"
             />
-            {/* Neon Glow */}
             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-purple-300/40 blur-3xl rounded-full animate-pulse"></div>
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-pink-300/40 blur-3xl rounded-full animate-pulse"></div>
           </div>
@@ -170,26 +165,26 @@ const AboutAstrologer = () => {
   );
 };
 
-const AstrologyServices = () => {
+const ConsultationServices = () => {
   const services = [
     {
-      title: "Breakup Problem",
-      desc: "Breakup problems are common, but astrology provides remedies to heal emotional pain and restore love in relationships.",
+      title: "Relationship Consultation",
+      desc: "Professional consultation sessions focused on improving communication, understanding perspectives, and strengthening relationships.",
       img: "https://i.pinimg.com/1200x/56/23/3a/56233a0caad6ac1136c682118ca138f8.jpg",
     },
     {
-      title: "Gf/Bf Dispute",
-      desc: "Astrological remedies help smoothen conflicts and bring balance in relationships with your partner.",
+      title: "Couple Guidance",
+      desc: "Confidential advisory sessions designed to support partners in resolving misunderstandings and building mutual respect.",
       img: "https://i.pinimg.com/736x/da/1e/de/da1ede4ba8faa752488419d5a2802fd7.jpg",
     },
     {
-      title: "Love Problem",
-      desc: "Astrology provides a better path to resolve love issues and bring harmony and trust between partners.",
+      title: "Personal Advisory",
+      desc: "Structured discussions to help individuals navigate emotional challenges with clarity and thoughtful decision-making.",
       img: "https://i.pinimg.com/736x/bc/49/b6/bc49b6e04d96e9d687ea1740e4cc93ed.jpg",
     },
     {
-      title: "Family Problem",
-      desc: "Get rid of family disputes with astrological guidance that promotes peace, harmony, and positivity at home.",
+      title: "Family Consultation",
+      desc: "Supportive consultation focused on promoting constructive dialogue and improving harmony within families.",
       img: "https://i.pinimg.com/736x/e7/b3/63/e7b36387a8c950dbb340455e0fdbdb1e.jpg",
     },
   ];
@@ -203,7 +198,7 @@ const AstrologyServices = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         {/* Title */}
         <h2 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-yellow-300 to-red-400 drop-shadow-lg montserrat mb-14">
-          🌟 Our Premium Astrology Services 🌟
+          Our Consultation Services
         </h2>
 
         {/* Cards Grid */}
@@ -232,10 +227,10 @@ const AstrologyServices = () => {
                   {service.desc}
                 </p>
 
-                {/* Call Button */}
+                {/* Contact Button */}
                 <a href={`tel:${phone_number}`}>
                   <button className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 text-white font-semibold shadow-lg hover:shadow-pink-500/50 hover:scale-105 transition-all duration-300 montserrat">
-                    <Phone className="w-5 h-5" /> Call Us Now
+                    <Phone className="w-5 h-5" /> Contact Us
                   </button>
                 </a>
               </div>
@@ -247,22 +242,22 @@ const AstrologyServices = () => {
   );
 };
 
-const AstrologyServicesModern = () => {
+const ConsultationServicesModern = () => {
   const services = [
     {
-      title: "Marriage Specialist",
+      title: "Marriage Consultation",
       img: "https://i.pinimg.com/736x/be/96/4b/be964bb4f6d6e07752fc4b363859b048.jpg",
     },
     {
-      title: "Husband & Wife Dispute",
+      title: "Couple Guidance",
       img: "https://i.pinimg.com/736x/f5/b2/00/f5b200772b619765261b2a50b595ae72.jpg",
     },
     {
-      title: "Ex Love Back Expert",
+      title: "Relationship Advisory",
       img: "https://i.pinimg.com/1200x/2f/5b/b3/2f5bb3dde2c5891188f1170b5d12260f.jpg",
     },
     {
-      title: "Financial Problems",
+      title: "Financial Consultation",
       img: "https://i.pinimg.com/736x/40/99/9c/40999c10cdac6c327a1378c45be496b5.jpg",
     },
   ];
@@ -278,7 +273,7 @@ const AstrologyServicesModern = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-white text-center mb-12 montserrat"
         >
-          Astrology Services
+          Our Consultation Services
         </motion.h2>
 
         {/* Cards */}
@@ -315,7 +310,7 @@ const AstrologyServicesModern = () => {
                       py-2.5 rounded-full transition-colors duration-300"
                   >
                     <Phone className="w-4 h-4" />
-                    Call Now
+                    Contact Us
                   </button>
                 </a>
               </div>
@@ -330,39 +325,39 @@ const AstrologyServicesModern = () => {
 const AllServicesModern = () => {
   const services = [
     {
-      title: "Ex Love Back",
+      title: "Relationship Consultation",
       icon: Heart,
-      desc: "Astrological remedies to reunite love with trust & harmony.",
+      desc: "Professional consultation focused on communication, understanding, and strengthening personal relationships.",
       gradient: "from-pink-500 via-rose-500 to-red-500",
     },
     {
-      title: "Court Case Solution",
+      title: "Legal Consultation Support",
       icon: Scale,
-      desc: "Powerful astrology solutions for legal & court issues.",
+      desc: "Advisory sessions to discuss documentation, process awareness, and structured decision planning.",
       gradient: "from-yellow-400 via-orange-500 to-red-500",
     },
     {
-      title: "Family Problem",
+      title: "Family Advisory",
       icon: Users,
-      desc: "Restore peace & happiness in family relationships.",
+      desc: "Confidential discussions aimed at improving dialogue and harmony within families.",
       gradient: "from-green-400 via-emerald-500 to-teal-500",
     },
     {
-      title: "Business Problem",
+      title: "Business Consultation",
       icon: Briefcase,
-      desc: "Grow business, profits & career with astrology remedies.",
+      desc: "Strategic advisory sessions focused on planning, growth direction, and professional development.",
       gradient: "from-blue-500 via-indigo-500 to-purple-600",
     },
     {
-      title: "Childless Couple",
+      title: "Personal Growth Guidance",
       icon: Users,
-      desc: "Blessings & remedies for couples seeking children.",
+      desc: "Supportive sessions to help individuals reflect, plan, and make informed life decisions.",
       gradient: "from-fuchsia-500 via-pink-500 to-rose-500",
     },
     {
-      title: "Thantra Pooja",
+      title: "Wellness & Lifestyle Consultation",
       icon: Sparkles,
-      desc: "Spiritual poojas for karma cleansing & energy balance.",
+      desc: "Structured conversations centered on balance, clarity, and thoughtful goal setting.",
       gradient: "from-purple-500 via-violet-500 to-indigo-500",
     },
   ];
@@ -380,7 +375,7 @@ const AllServicesModern = () => {
             bg-gradient-to-r from-pink-400 via-yellow-400 to-purple-500 
             bg-clip-text text-transparent montserrat"
         >
-          Our Astrology Services
+          Our Consultation Services
         </motion.h2>
 
         {/* Grid */}
@@ -420,7 +415,7 @@ const AllServicesModern = () => {
                       bg-gradient-to-r ${service.gradient}
                       hover:brightness-110 transition-all duration-300`}
                   >
-                    Contact Now
+                    Contact Us
                   </button>
                 </a>
               </div>
@@ -453,7 +448,6 @@ function HomeLastDesign() {
               alt={person_name}
               className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
             />
-            {/* Glow ring */}
             <div className="absolute inset-0 rounded-full border-4 border-pink-400/40 animate-spin-slow"></div>
           </div>
         </motion.div>
@@ -467,19 +461,18 @@ function HomeLastDesign() {
         >
           <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-yellow-300 via-pink-400 to-red-500 bg-clip-text text-transparent drop-shadow-lg montserrat">
             <Sparkles className="inline w-8 h-8 text-yellow-300 animate-pulse mr-2" />
-            Astrologer {person_name}
-          </h2>
-          <h3 className="text-lg md:text-2xl font-semibold text-gray-200 montserrat">
-            🌌 India’s Most Trusted Astrology Expert
-          </h3>
-          <p className="text-gray-300 leading-relaxed text-base open-sans">
-            With profound knowledge in{" "}
-            <span className="text-yellow-400">Vastu</span>,{" "}
-            <span className="text-pink-400">horoscope reading</span>, and{" "}
-            <span className="text-purple-300">spiritual guidance</span>,{" "}
             {person_name}
-            Ji empowers individuals to overcome obstacles and discover their
-            true destiny.
+          </h2>
+
+          <h3 className="text-lg md:text-2xl font-semibold text-gray-200 montserrat">
+            Professional Consultation & Advisory Services
+          </h3>
+
+          <p className="text-gray-300 leading-relaxed text-base open-sans">
+            {person_name} offers structured consultation sessions focused on
+            thoughtful discussion, clarity, and informed decision-making.
+            Services are provided with professionalism, confidentiality, and
+            respect for each individual’s situation.
           </p>
 
           {/* Contact Section */}
@@ -488,22 +481,22 @@ function HomeLastDesign() {
               href={`tel:${phone_number}`}
               className="flex items-center gap-2 bg-gradient-to-r from-red-500 via-pink-600 to-purple-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-pink-400/60 hover:scale-105 transition-all duration-300"
             >
-              <Phone size={20} /> Call Now
+              <Phone size={20} /> Contact Us
             </a>
 
             <a
-              href={`https://wa.me/${whatsapp_number}`}
+              href={`https://wa.me/${whatsapp_number}?text=Hello,%20I%20would%20like%20to%20know%20more%20about%20your%20consultation%20services.`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-green-400/60 hover:scale-105 transition-all duration-300"
             >
-              <MessageCircle size={20} /> Chat on WhatsApp
+              <MessageCircle size={20} /> WhatsApp
             </a>
           </div>
 
-          {/* Special Note */}
-          <p className="mt-5 text-yellow-300 font-bold tracking-wide text-sm md:text-base poppins">
-            Accurate Predictions | Trusted Guidance | Life-changing Remedies ✨
+          {/* Professional Note */}
+          <p className="mt-5 text-yellow-300 font-semibold tracking-wide text-sm md:text-base poppins">
+            Confidential | Professional | Client-Focused
           </p>
         </motion.div>
       </div>
